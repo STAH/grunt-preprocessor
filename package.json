@@ -1,0 +1,51 @@
+{
+  "name": "grunt-preprocessor",
+  "description": "Grunt task to preprocess JS files.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/STAH/grunt-preprocessor",
+  "author": {
+    "name": "Stanislav Lesnikov",
+    "email": "stan@nashdot.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/STAH/grunt-preprocessor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/STAH/grunt-preprocessor/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/STAH/grunt-preprocessor/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "bin": {
+    "grunt-preprocessor": "bin/grunt-preprocessor"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "preprocessor": ">= 1.0.0"
+  },
+  "peerDependencies": {
+    "grunt": "0.4.x"
+  },
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-contrib-jshint": "~0.6.0"
+  },
+  "keywords": [
+    "javascript",
+    "include",
+    "preprocess",
+    "preprocessor",
+    "grunt",
+    "gruntplugin"
+  ]
+}
