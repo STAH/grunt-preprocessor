@@ -16,24 +16,24 @@ module.exports = function (grunt) {
     var options = this.data,
       root = options.root || '.',
       src = options.src,
-      dest = options.dest;
+      dest = options.dest,
+      context = options.context || {};
+    grunt.util._.extend(context, process.env);
 
     var sourceCode = grunt.file.read("./" + src, root);
-    var sourceCompiled = process(sourceCode, root);
+    var sourceCompiled = processFile(sourceCode, root, context);
 
     grunt.file.write(dest, sourceCompiled);
     grunt.log.write("[preprocessor] Processed " + src + " => " + dest);
   });
 
-  function process(source, root) {
+  function processFile(source, root, context) {
     var Preprocessor = require("preprocessor");
 
     var pp = new Preprocessor(source, root);
 
     try {
-      return pp.process({
-        FULL: true
-      });
+      return pp.process(context);
     } catch (e) {
       grunt.log.error(e);
       grunt.fail.warn("processor failed to process.");

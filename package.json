@@ -1,7 +1,7 @@
 {
   "name": "grunt-preprocessor",
   "description": "Grunt task to preprocess JS files.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/STAH/grunt-preprocessor",
   "author": {
     "name": "Stanislav Lesnikov",

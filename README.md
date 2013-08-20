@@ -33,6 +33,9 @@ Source file path
 ##### `dest`
 Destination file path
 
+##### `context`
+Preprocessor context (will be merged with process environment context)
+
 ### Example #1
 
 ```javascript
@@ -40,7 +43,10 @@ Destination file path
     main: {
       root: "app/includes",
       src: "app/main.js",
-      dest: "build/main.js"
+      dest: "build/main.js",
+      context: {
+        DEBUG: true
+      }
     }
   };
 ```
@@ -52,6 +58,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 Release History
 ===============
+*   __20/08/2013 - 0.2.0__: Introduce context with process.env merge.
 *   __26/07/2013 - 0.1.0__: Initial release.
 
 License
