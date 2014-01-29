@@ -27,11 +27,11 @@ Include path
 
 ### Options
 
-##### `src`
-Source file path
+##### `separator`
+Type: `String`
+Default: `grunt.util.linefeed`
 
-##### `dest`
-Destination file path
+Multiple files will be joined on this string. If you're processing concatenated JavaScript files with a minifier, you may need to use a semicolon `';'` as the separator.
 
 ##### `context`
 Preprocessor context (will be merged with process environment context)
@@ -39,16 +39,44 @@ Preprocessor context (will be merged with process environment context)
 ### Example #1
 
 ```javascript
-  config.preprocessor = {
+grunt.initConfig({
+  preprocessor: {
     main: {
-      root: "app/includes",
-      src: "app/main.js",
-      dest: "build/main.js",
-      context: {
-        DEBUG: true
+      options: {
+        root: "app/includes",
+        context: {
+          DEBUG: true
+        }
+      },
+      files: {
+        src: "app/main.js",
+        dest: "build/main.js"
       }
     }
-  };
+  }
+});
+```
+
+### Example #2
+Concat multiple files and process them
+
+```javascript
+grunt.initConfig({
+  preprocessor: {
+    main: {
+      options: {
+        root: "app/includes",
+        context: {
+          DEBUG: true
+        }
+      },
+      files: {
+        src: ["app/main.js", "app/additional.js"],
+        dest: "build/main-extras.js"
+      }
+    }
+  }
+});
 ```
 
 Contributing
