@@ -86,11 +86,12 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 Release History
 ===============
+*   __07/02/2013 - 0.3.0__: Support multiple targets and globbing (@rvock)
 *   __20/08/2013 - 0.2.0__: Introduce context with process.env merge.
 *   __26/07/2013 - 0.1.0__: Initial release.
 
 License
 =======
 
-Copyright (c) 2013 Stanislav Lesnikov
+Copyright (c) 2014 Stanislav Lesnikov and contributors
 Licensed under the MIT license.

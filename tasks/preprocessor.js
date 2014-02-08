@@ -2,7 +2,7 @@
  * grunt-preprocessor
  * https://github.com/STAH/grunt-preprocessor
  *
- * Copyright (c) 2013 Stanislav Lesnikov
+ * Copyright (c) 2014 Stanislav Lesnikov and contributors
  * Licensed under the MIT license.
  * https://github.com/STAH/grunt-preprocessor/blob/master/LICENSE-MIT
  */
