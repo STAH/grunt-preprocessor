@@ -13,18 +13,35 @@ module.exports = function (grunt) {
 
   grunt.registerMultiTask("preprocessor", "Grunt task to preprocess JS files.", function () {
 
-    var options = this.data,
-      root = options.root || '.',
-      src = options.src,
-      dest = options.dest,
+    // Merge task-specific and/or target-specific options with these defaults.
+    var options = this.options({
+      separator: ';\n'
+    });
+
+    var root = options.root || grunt.util.linefeed,
       context = options.context || {};
     grunt.util._.extend(context, process.env);
 
-    var sourceCode = grunt.file.read("./" + src, root);
-    var sourceCompiled = processFile(sourceCode, root, context);
+    this.files.forEach(function(f) {
+      // Concat specified files.
+      var src = f.src.filter(function(filepath) {
+        // Warn on and remove invalid source files (if nonull was set).
+        if (!grunt.file.exists(filepath)) {
+          grunt.log.warn('Source file "' + filepath + '" not found.');
+          return false;
+        } else {
+          return true;
+        }
+      }).map(function(filepath) {
+        // Read file source.
+        return grunt.file.read(filepath);
+      }).join(grunt.util.normalizelf(options.separator));
 
-    grunt.file.write(dest, sourceCompiled);
-    grunt.log.write("[preprocessor] Processed " + src + " => " + dest);
+      var sourceCompiled = processFile(src, root, context);
+
+      grunt.file.write(f.dest, sourceCompiled);
+      grunt.log.write("[preprocessor] Processed " + f.dest + "\n");
+    });
   });
 
   function processFile(source, root, context) {
