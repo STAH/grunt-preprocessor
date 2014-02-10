@@ -49,8 +49,7 @@ grunt.initConfig({
         }
       },
       files: {
-        src: "app/main.js",
-        dest: "build/main.js"
+        "build/main.js": "app/main.js"
       }
     }
   }
@@ -71,8 +70,8 @@ grunt.initConfig({
         }
       },
       files: {
-        src: ["app/main.js", "app/additional.js"],
-        dest: "build/main-extras.js"
+        "build/main.js": "app/main.js",
+        "build/extras.js": ["app/libs.js", "app/additional.js"],
       }
     }
   }
