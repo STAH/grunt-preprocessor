@@ -31,14 +31,15 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "preprocessor": ">= 1.0.0"
+    "preprocessor": ">= 1.0.0",
+    "lodash": "~2.4.1"
   },
   "peerDependencies": {
     "grunt": "0.4.x"
   },
   "devDependencies": {
-    "grunt": "0.4.x",
-    "grunt-contrib-jshint": "~0.6.0"
+    "grunt": "~0.4.x",
+    "grunt-contrib-jshint": "~0.8.0"
   },
   "keywords": [
     "javascript",
