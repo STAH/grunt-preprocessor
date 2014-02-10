@@ -10,6 +10,8 @@
 
 module.exports = function (grunt) {
   "use strict";
+  
+  var _ = require('lodash');
 
   grunt.registerMultiTask("preprocessor", "Grunt task to preprocess JS files.", function () {
 
@@ -20,7 +22,7 @@ module.exports = function (grunt) {
 
     var root = options.root || grunt.util.linefeed,
       context = options.context || {};
-    grunt.util._.extend(context, process.env);
+    _.extend(context, process.env);
 
     this.files.forEach(function(f) {
       // Concat specified files.
