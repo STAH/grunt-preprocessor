@@ -17,12 +17,15 @@ module.exports = function (grunt) {
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      separator: ';\n'
+      separator: ';\n',
+      merge_env : true
     });
 
     var root = options.root || grunt.util.linefeed,
       context = options.context || {};
-    _.extend(context, process.env);
+    if(options.merge_env){
+        _.extend(context, process.env);
+    }
 
     this.files.forEach(function(f) {
       // Concat specified files.

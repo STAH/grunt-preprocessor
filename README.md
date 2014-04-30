@@ -34,7 +34,10 @@ Default: `grunt.util.linefeed`
 Multiple files will be joined on this string. If you're processing concatenated JavaScript files with a minifier, you may need to use a semicolon `';'` as the separator.
 
 ##### `context`
-Preprocessor context (will be merged with process environment context)
+Preprocessor context.
+
+##### `merge_env`
+Merge preprocessor context with the process environment variables. Default true.
 
 ### Example #1
 
