@@ -18,12 +18,12 @@ module.exports = function (grunt) {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       separator: ';\n',
-      merge_env : true
+      mergeEnv : true
     });
 
     var root = options.root || grunt.util.linefeed,
       context = options.context || {};
-    if(options.merge_env){
+    if(options.mergeEnv){
         _.extend(context, process.env);
     }
 

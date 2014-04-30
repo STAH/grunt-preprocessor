@@ -36,7 +36,7 @@ Multiple files will be joined on this string. If you're processing concatenated 
 ##### `context`
 Preprocessor context.
 
-##### `merge_env`
+##### `mergeEnv`
 Merge preprocessor context with the process environment variables. Default true.
 
 ### Example #1
