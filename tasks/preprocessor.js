@@ -18,10 +18,12 @@ module.exports = function (grunt) {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       separator: ';\n',
+      preserveLineNumbers: false,
       mergeEnv : true
     });
 
     var root = options.root || grunt.util.linefeed,
+      preserveLineNumbers = options.preserveLineNumbers || false,
       context = options.context || {};
     if(options.mergeEnv){
         _.extend(context, process.env);
@@ -42,17 +44,17 @@ module.exports = function (grunt) {
         return grunt.file.read(filepath);
       }).join(grunt.util.normalizelf(options.separator));
 
-      var sourceCompiled = processFile(src, root, context);
+      var sourceCompiled = processFile(src, root, preserveLineNumbers, context);
 
       grunt.file.write(f.dest, sourceCompiled);
       grunt.log.write("[preprocessor] Processed " + f.dest + "\n");
     });
   });
 
-  function processFile(source, root, context) {
+  function processFile(source, root, preserveLineNumbers, context) {
     var Preprocessor = require("preprocessor");
 
-    var pp = new Preprocessor(source, root);
+    var pp = new Preprocessor(source, root, preserveLineNumbers);
 
     try {
       return pp.process(context);
