@@ -88,7 +88,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 Release History
 ===============
-*   __11/02/2013 - 0.5.1__: Based on https://github.com/nashdot/Preprocessor.js
+*   __01/02/2016 - 0.6.0__: ESLint remake
+*   __01/02/2016 - 0.5.1__: Based on https://github.com/nashdot/Preprocessor.js
 *   __11/02/2013 - 0.4.0__: Update grunt-contrib-jshint / Remove grunt.util._ (@shinnn)
 *   __07/02/2013 - 0.3.0__: Support multiple targets and globbing (@rvock)
 *   __20/08/2013 - 0.2.0__: Introduce context with process.env merge.
