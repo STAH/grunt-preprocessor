@@ -1,7 +1,7 @@
 {
   "name": "grunt-preprocessor",
   "description": "Grunt task to preprocess JS files.",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "homepage": "https://github.com/STAH/grunt-preprocessor",
   "author": {
     "name": "Stanislav Lesnikov",
@@ -35,7 +35,8 @@
   "devDependencies": {
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
-    "grunt": "~0.4.x"
+    "grunt": "~0.4.x",
+    "grunt-eslint": "^17.3.1"
   },
   "keywords": [
     "javascript",
