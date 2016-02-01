@@ -2,7 +2,7 @@
  * grunt-preprocessor
  * https://github.com/STAH/grunt-preprocessor
  *
- * Copyright (c) 2014 Stanislav Lesnikov and contributors
+ * Copyright (c) 2014-2016 Stanislav Lesnikov and contributors
  * Licensed under the MIT license.
  * https://github.com/STAH/grunt-preprocessor/blob/master/LICENSE-MIT
  */
@@ -10,7 +10,7 @@
 
 module.exports = function (grunt) {
   "use strict";
-  
+
   var _ = require('lodash');
 
   grunt.registerMultiTask("preprocessor", "Grunt task to preprocess JS files.", function () {
@@ -52,7 +52,7 @@ module.exports = function (grunt) {
   });
 
   function processFile(source, root, preserveLineNumbers, context) {
-    var Preprocessor = require("preprocessor");
+    var Preprocessor = require("preprocessor.js");
 
     var pp = new Preprocessor(source, root, preserveLineNumbers);
 
